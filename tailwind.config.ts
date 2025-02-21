@@ -1,14 +1,18 @@
 const defaultTheme = require("tailwindcss/defaultTheme"); // eslint-disable-line
-
 const colors = require("tailwindcss/colors"); // eslint-disable-line
+
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette"); // eslint-disable-line
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{ts,tsx}"],
-  darkMode: ["class", "class"],
+  content: [
+    "./src/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+  ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -60,8 +64,7 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line
-  plugins: [addVariablesForColors, require("tailwindcss-animate")],
+  plugins: [addVariablesForColors],
 };
 
 // eslint-disable-next-line
